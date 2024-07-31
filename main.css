@@ -1,0 +1,98 @@
+* {
+    text-align: center;
+    font-family:'Fredericka the Great', cursive;
+    font-weight:bold;
+}
+body {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    overflow:hidden;
+    background: linear-gradient(to right, #44d8b1, #231bb1);
+    
+}
+    
+#calc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    overflow: hidden;
+}
+
+#container {
+    height: 70vh;
+    width: auto;
+    display:grid;
+    grid-template-columns: repeat(4,100px);
+    background-color:rgb(58, 210, 58);
+    grid-template-areas: 
+        "header header header header"
+        "clear toggle percent divide"
+        "seven eight nine multiply"
+        "four five six subtract"
+        "zero zero decimal equals";
+    border: 11px solid rgb(45, 35, 35);
+    border-radius: 25px;
+    gap:2px;
+    
+    
+}
+#display {
+    display: flex;
+    grid-area:header;
+    flex-direction:row;
+    justify-content: end;
+    margin:6px;
+    color:rgb(58, 210, 58);
+    padding: 12px;
+    background-color: rgb(33, 33, 196);
+    font-size: 6em;
+    border-radius: 25px;
+    border: 2px dotted black;
+    
+}
+
+button {
+    margin:4px;
+    border:none;
+    font-weight: initial;
+    border: 2px dotted black;
+    border-radius: 150px;
+    font-size: 3em;
+    cursor:pointer;
+    outline:none;
+    transition: box-shadow 0.3s ease-in-out;
+
+}
+
+button:hover {
+    animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        box-shadow: 0 0 5px #a23fdf, 0 0 10px #8a7bebde, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
+    }
+    50% {
+        box-shadow: 0 0 5px #d2e449, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
+    }
+}
+
+button#zero {
+    grid-column:span 2;
+}
+.operand{
+    color: rgb(58, 210, 58);
+    background-color: rgb(33, 33, 196);
+}
+.operator{
+    background-color: rgb(8, 152, 152);
+    color:white;
+}
+.clear,.toggle, .decimal, .percent {
+    background-color: rgb(155, 6, 155);
+    color: black;
+    font-weight:200;
+}
+
